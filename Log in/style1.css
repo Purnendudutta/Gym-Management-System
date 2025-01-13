@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+*{
+   font-family: 'Poppins', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+}
+
+/*TOP NAVBAR*/
+
+#topnavbar {
+   background-color: #66fcf1;
+   width: 150%;
+   padding-bottom: 10px;
+   display: flex;
+   align-items: center;
+}
+
+#topnavitems {
+   font-size: 15px;
+   width: 100%;
+   justify-content: space-between;
+   list-style: none;
+}
+
+#topnavitems1 {
+   margin-top: 15px;
+   justify-content: space-between;
+}
+#topnavitems2 {
+   margin-top: 0px;
+}
+#topnavitems3 {
+   margin-right: -150px;
+   word-spacing: 10px;
+}
+
+/*MAIN NAVBAR*/
+
+#navbar{
+   background-color: black !important;
+   position: sticky;
+   top: 0;
+   z-index: 11;
+}
+
+#navitems>li>a{
+   color: white;
+   font-weight: 600;
+   margin-left: 20px;
+   border-bottom: 3px solid transparent;
+   transition: color 0.4s ease-in-out,transform 0.4s ease-in-out, border-bottom 0s ease-in-out;
+}
+
+#navitems>li>a:hover{
+   color: #66fcf1;
+   transform: translateY(-10%);
+   border-bottom: 3px solid #66fcf1; 
+}
+
+#navitems{
+   margin-left: 300px;
+}
+
+#navlogo{
+   font-size: 25px !important;
+   font-family: 'Anton';
+   font-weight: 700;
+   letter-spacing: 5px;
+   color: white !important;
+}
+
+#navlogo span{
+   font-size: 25px !important;
+   font-family: 'Anton';
+   font-weight: 700;
+   letter-spacing: 7px;
+   color: #66fcf1;
+}
+
+/* ============ LOGIN CONTAINER =============*/
+
+.container{
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:20px;
+   padding-bottom: 60px;
+}
+
+.container .content{
+   text-align: center;
+}
+
+.container .content h3{
+   font-size: 30px;
+   color:#333;
+}
+
+.container .content h3 span{
+   background: rgb(20, 210, 220);
+   color:#fff;
+   border-radius: 5px;
+   padding:0 15px;
+}
+
+.container .content h1{
+   font-size: 50px;
+   color:#333;
+}
+
+.container .content h1 span{
+   color:rgb(20, 217, 220);
+}
+
+.container .content p{
+   font-size: 25px;
+   margin-bottom: 20px;
+}
+
+.container .content .btn{
+   display: inline-block;
+   padding:10px 30px;
+   font-size: 20px;
+   background: #333;
+   color:#fff;
+   margin:0 5px;
+   text-transform: capitalize;
+}
+
+.container .content .btn:hover{
+   background: rgb(20, 213, 220);
+}
+
+.form-container{
+   min-height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding:20px;
+   padding-bottom: 60px;
+   background: #eee;
+}
+
+.form-container form{
+   padding:20px;
+   border-radius: 5px;
+   box-shadow: 0 5px 10px rgba(0,0,0,.1);
+   background: #fff;
+   text-align: center;
+   width: 500px;
+}
+
+.form-container form h3{
+   font-size: 30px;
+   text-transform: uppercase;
+   margin-bottom: 10px;
+   color:#333;
+}
+
+.form-container form input,
+.form-container form select{
+   width: 100%;
+   padding:10px 15px;
+   font-size: 17px;
+   margin:8px 0;
+   background: #eee;
+   border-radius: 5px;
+}
+
+.form-container form select option{
+   background: #fff;
+}
+
+.form-container form .form-btn{
+   background: rgb(20, 213, 220);
+   color:rgb(0, 0, 0);
+   text-transform: capitalize;
+   font-size: 20px;
+   cursor: pointer;
+}
+
+.form-container form .form-btn:hover{
+   background: rgb(20, 213, 220);
+   color:#fff;
+}
+
+.form-container form p{
+   margin-top: 10px;
+   font-size: 20px;
+   color:#333;
+}
+
+.form-container form p a{
+   color:rgb(20, 210, 220);
+}
+
+.form-container form .error-msg{
+   margin:10px 0;
+   display: block;
+   background: rgb(20, 217, 221);
+   color:#fff;
+   border-radius: 5px;
+   font-size: 20px;
+   padding:10px;
+}
+
+@media (max-width: 768px) {
+
+   /* Top Navbar */
+
+   #topnavbar {
+       display: none;
+   }
+
+   /*Main Navbar*/
+
+   #navitems {
+       margin-left: 0;
+       justify-content: center;
+   }
+
+   #navlogo {
+       font-size: 20px;
+       text-align: center;
+   }
+}

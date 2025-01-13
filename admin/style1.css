@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Climate+Crisis&family=Concert+One&family=Josefin+Sans:wght@600&family=Madimi+One&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Poppins';
+}
+
+/*TOP NAVBAR*/
+
+#topnavbar {
+    background-color: #66fcf1;
+    width: 150%;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#topnavitems {
+    font-size: 15px;
+    width: 100%;
+    justify-content: space-between;
+    list-style: none;
+}
+
+#topnavitems1 {
+    margin-top: 15px;
+    justify-content: space-between;
+}
+#topnavitems2 {
+    margin-top: 0px;
+}
+#topnavitems3 {
+    margin-right: -150px;
+    word-spacing: 10px;
+}
+
+/*MAIN NAVBAR*/
+
+#navbar{
+    background-color: black !important;
+    position: sticky;
+    top: 0;
+    z-index: 11;
+}
+
+#navitems>li>a{
+    color: white;
+    font-weight: 600;
+    margin-left: 20px;
+    border-bottom: 3px solid transparent;
+    transition: color 0.4s ease-in-out,transform 0.4s ease-in-out, border-bottom 0s ease-in-out;
+}
+
+#navitems>li>a:hover{
+    color: #66fcf1;
+    transform: translateY(-10%);
+    border-bottom: 3px solid #66fcf1; 
+}
+
+#navitems{
+    margin-left: 300px;
+}
+
+#navlogo{
+    font-size: 25px !important;
+    font-family: 'Anton';
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: white !important;
+}
+
+#navlogo span{
+    font-size: 25px !important;
+    font-family: 'Anton';
+    font-weight: 700;
+    letter-spacing: 7px;
+    color: #66fcf1;
+}
+
+/*=========== MAIN CONTAINER =============*/
+
+#main-container{
+    height: 750px;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #66fcf1;
+}
+
+#body_container{
+    margin-top: 10px;
+    height: 100%;
+    width: 80%;
+    padding: 0;
+    background-color:  #66fcf1;
+    
+}
+#dashboard_container{
+    margin-top: 80px;
+    height: 100%;
+    width: 20%;
+    background-color: #66fcf1;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    
+}
+.dashboard_heading{
+    width: 200px;
+    font-weight: 600;
+    font-size: 25px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content:space-evenly;
+
+}
+#navbar_container{
+    height: 8%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.searchBar{
+    height: 35px;
+    width: 400px;
+    border-radius: 30px ;
+    background-color: white;
+    padding: 10px;
+    border: none;
+}
+.profileContainer{
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    align-items: center;
+    
+}
+.profileContainer i{
+    font-size: 20px;
+    margin: 7px;
+    color: black;
+}
+.profileContainer p{
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 8px;
+}
+#headingName{
+    margin-bottom: 60px;
+    color: rgb(11, 11, 11);
+    margin-top: 15px;
+}
+#headingName p{
+    font-weight: 600;
+    font-size: 25px;
+    font-family: 'Madimi One' !important;
+}
+#NavItems p{
+    color: rgb(9, 9, 9);
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 20px;
+    height: 40px;
+    width: 200px;
+    padding: 10px;
+    transition: all 0.2s ease-in-out;
+}
+#NavItems p:hover{
+    background-color: white;
+    color: black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#NavItems p span i{
+    margin-right: 10px;
+    font-size: 20px;
+}
+.active{
+    background-color: rgb(255, 255, 255);
+    color: black !important;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+#main_body{
+    height: 92%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+}
+#card_container{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+#desc_container{
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+}
+.box{
+    height: 120px;
+    width: 230px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+.activeBox{
+    background-color:  #66fcf1;
+    color: white;
+}
+.activeBoxi{
+    color: black !important;
+}
+.descBox1{
+    background-color: white;
+    border-radius: 10px;
+    height: 85%;
+    width: 60%;
+}
+.descBox2{
+    background-color: white;
+    border-radius: 10px;
+    height: 85%;
+    width: 30%;
+}
+.numberText{
+    font-size: 25px;
+    font-weight: 600;
+    color: black;
+}
+.sloganText{
+    font-size: 15px;
+    font-weight: 600;
+    color: #acabab;
+}
+.box i{
+    font-size: 35px;
+    color: #17a2b8;
+}
+.textContainer{
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.descHeader{
+    height: 50px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 2px solid #31dede;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.RecentText{
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.descHeader button{
+    margin-right: 20px;
+}
+
+/*MOBILE DEVICE*/
+
+@media (max-width: 768px) {
+
+    /* Top Navbar */
+
+    #topnavbar {
+        display: none;
+    }
+
+    /*Main Navbar*/
+
+    #navitems {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    #navlogo {
+        font-size: 20px;
+        text-align: center;
+    }
+}

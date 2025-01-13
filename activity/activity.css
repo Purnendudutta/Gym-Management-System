@@ -1,0 +1,155 @@
+/*GLOBAL STYLES*/
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Climate+Crisis&family=Josefin+Sans:wght@300;400;700&family=Poppins:wght@300;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*TOP NAVBAR*/
+
+#topnavbar {
+    background-color: #66fcf1;
+    width: 150%;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#topnavitems {
+    font-size: 15px;
+    width: 100%;
+    justify-content: space-between;
+    list-style: none;
+}
+
+#topnavitems1 {
+    margin-top: 15px;
+    justify-content: space-between;
+}
+#topnavitems2 {
+    margin-top: 0px;
+}
+#topnavitems3 {
+    margin-right: -150px;
+    word-spacing: 10px;
+}
+
+/*MAIN NAVBAR*/
+
+#navbar{
+    background-color: black !important;
+    position: sticky;
+    top: 0;
+    z-index: 11;
+}
+
+#navitems>li>a{
+    color: white;
+    font-weight: 600;
+    margin-left: 20px;
+    border-bottom: 3px solid transparent;
+    transition: color 0.4s ease-in-out,transform 0.4s ease-in-out, border-bottom 0s ease-in-out;
+}
+
+#navitems>li>a:hover{
+    color: #66fcf1;
+    transform: translateY(-10%);
+    border-bottom: 3px solid #66fcf1; 
+}
+
+#navitems{
+    margin-left: 300px;
+}
+
+#navlogo{
+    font-size: 25px !important;
+    font-family: 'Anton';
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: white !important;
+}
+
+#navlogo span{
+    font-size: 25px !important;
+    font-family: 'Anton';
+    font-weight: 700;
+    letter-spacing: 7px;
+    color: #66fcf1;
+}
+
+
+/*CONTAINER SECTION*/
+
+body{
+    height:auto;
+    /*width: 100%;*/
+    background-color:black !important;
+}
+
+.header{
+    color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh; /* Full viewport height */  
+}
+.container h2{
+    color: #66fcf1;
+    padding: 50px;
+}
+
+.card {
+    width: 800px;
+    margin-left: 360px; /* You can remove this if you want */
+    text-align: center; /* Add these properties to center the card */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    margin-bottom: 20px; /* Add a margin to the bottom of each card */
+}
+
+/*MOBILE DEVICE*/
+
+@media (max-width: 768px) {
+
+    /* Top Navbar */
+
+    #topnavbar {
+        display: none;
+    }
+
+    /*Main Navbar*/
+
+    #navitems {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    #navlogo {
+        font-size: 20px;
+        text-align: center;
+    }
+    /*=========== CARDS ===========*/
+
+    .card {
+        width: 90%; /* Make the card take up 90% of the screen width */
+        padding: 1px; /* Reduce padding for smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center; /* Add these properties to center the card */
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center; /* Centers vertically */
+        margin-bottom: 20px; /* Add a margin to the bottom of each card */
+    }
+}

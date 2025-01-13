@@ -1,0 +1,648 @@
+/*GLOBAL STYLES*/
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Climate+Crisis&family=Josefin+Sans:wght@300;400;700&family=Poppins:wght@300;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*TOP NAVBAR*/
+
+#topnavbar {
+    background-color: #66fcf1;
+    width: 150%;
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#topnavitems {
+    font-size: 15px;
+    width: 100%;
+    justify-content: space-between;
+    list-style: none;
+}
+
+#topnavitems1 {
+    margin-top: 15px;
+    justify-content: space-between;
+}
+#topnavitems2 {
+    margin-top: 0px;
+}
+#topnavitems3 {
+    margin-right: -150px;
+    word-spacing: 10px;
+}
+
+/*MAIN NAVBAR*/
+
+#navbar{
+    background-color: black !important;
+    position: sticky;
+    top: 0;
+    z-index: 11;
+}
+
+#navitems>li>a{
+    color: white;
+    font-weight: 600;
+    margin-left: 20px;
+    border-bottom: 3px solid transparent;
+    transition: color 0.4s ease-in-out,transform 0.4s ease-in-out, border-bottom 0s ease-in-out;
+}
+
+#navitems>li>a:hover{
+    color: #66fcf1;
+    transform: translateY(-10%);
+    border-bottom: 3px solid #66fcf1; 
+}
+
+#navitems{
+    margin-left: 300px;
+}
+
+#navlogo{
+    font-size: 25px !important;
+    font-family: 'Anton';
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: white !important;
+}
+
+#navlogo span{
+    font-size: 25px !important;
+    font-family: 'Anton';
+    font-weight: 700;
+    letter-spacing: 7px;
+    color: #66fcf1;
+}
+
+/*HERO SECTION*/
+
+#hero {
+    background-image: url('herobackgroundclone.jpg');
+    width: 100%;
+    height: 800px;
+    background-size: cover;
+    background-repeat: no-repeat;background-position: center;
+    margin-top: -80px;
+    display: flex;
+    justify-content: space-between; /* Aligns to the edges */
+    align-items: center; /* Vertically centers */
+    padding: 0 20px; /* Add padding for spacing */
+}
+
+/* hero text css */
+
+#herotext{
+    width: 100%;
+    height: 100%;
+}
+
+#herotextleft{
+    color: white;
+    margin-left: 30px;
+}
+#herotextleft1{
+    font-size: 60px;
+    font-weight: 600;
+    line-height: 70px;
+}
+#herotextleft2{
+    color: white;
+}
+
+#herotextright1{
+    color: #66fcf1;
+    font-weight: 600;
+    letter-spacing: 10px;
+}
+#herotextright2{
+    margin-top: 40px;
+}
+
+#playstore i, #appstore i{
+    color: white;
+    font-size: 30px;
+}
+#playstore p, #appstore p{
+    color: white;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 600;
+}
+#playstore, #appstore{
+    border: 2px solid #17a2b8;
+    width: 200px;
+    margin-right: 20px;
+    transition: all 0.2s ease-in-out;
+}
+#playstore:hover, #appstore:hover{
+    background-color: #17a2b8;
+    border: 2px solid white;
+}
+
+/*SERVICES SECTION*/
+
+.service{
+    margin-top: 20px !important;
+    position: relative;
+}
+#ourservicesmain{
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+#service1{
+    width: 300px;
+    height: 300px;
+}
+#service1-text1{
+    font-size: 40px;
+    font-family: 'Anton';
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 5px;
+    color: black;
+}
+#service1-text2{
+    font-weight: 600;
+    color: black;
+    text-align: center;
+}
+#service2{
+    background-image: url('oursevices1.jpg');
+    width: 300px;
+    height: 300px;
+}
+#service3{
+    background-image: url('oursevices2.jpg');
+    width: 300px;
+    height: 300px;
+}
+#service4{
+    background-image: url('ourservices3.jpg');
+    width: 300px;
+    height: 300px;
+}
+#service5{
+    background-image: url('oursevices4.jpg');
+    width: 300px;
+    height: 300px;
+}
+#service6{
+    background-image: url('ourservices5.jpg');
+    width: 300px;
+    height: 300px;
+}
+.service:not(#service1):after{
+    content: "";
+    background-color: rgb(30, 30, 30);
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#allservicetext1{
+    font-weight: 600;
+    color: #00ffee;
+    z-index: 1;
+    text-align: center;
+}
+#allservicetext2{
+    font-weight: 600;
+    color: white;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+}
+.service:hover #allservicetext1{
+    color: white;
+}
+.service:hover #allservicetext2 {
+    opacity: 10;
+}
+
+/*TRAINERS SECTION*/
+
+#trainersmain{
+    background-image: url('trainersbg.jpg');
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    position: relative;
+    
+}
+#trainersmain::after{
+    content: "";
+    background-color: black;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#trainersmain>p{
+    color: #66fcf1;
+    font-size: 40px;
+    font-weight: 600;
+    z-index: 1;
+}
+#trainersubmain{
+    height: 400px;
+    width: 100%;
+    z-index: 1;
+}
+#trainer1 img, #trainer2 img{
+    border: 3px solid #66fcf1;
+    transition: all 0.4s ease-in-out;
+}
+
+.trainertext{
+    color: #c5c6c7;
+    margin-left: 20px;
+}
+
+.trainertext1{
+    color: #4ed8ed;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#trainer1, #trainer2{
+    height: 350px;
+}
+
+#trainer1:hover img, #trainer2:hover img{
+    transform: scale(1.05)
+}
+
+.trainertext2{
+    transition: all 0.4s ease-in-out;
+}
+#trainer2:hover .trainertext2, #trainer1:hover .trainertext2{
+    color: white;
+}
+
+/*ABOUT US SECTION*/
+
+#aboutusmain {
+    width: 100%;
+    height: 500px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.aboutus {
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.fitnessfreek {
+    color: black;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 10px;
+    margin-bottom: 40px;
+}
+
+#aboutus2 img {
+    margin-left: 20px;
+    clip-path: polygon(0% 10%, 100% 0%, 100% 90%, 0% 100%);
+    animation: anime 2s ease-in-out infinite alternate forwards;
+}
+
+/*DESIGN SECTION*/
+
+#designmain{
+    height: 500px;
+}
+
+#designsubmain{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#design1, #design2{
+    height: 100%;
+    width: 50%;
+    position: relative;
+}
+
+#design1::after{
+    content: "";
+    background-color: black;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#design2::after{
+    content: "";
+    background-color: #17a2b8;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.designtexts1{
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.designtexts2{
+    color: black;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+}
+
+#designsubmain img{
+    position: absolute;
+    left: 75%;
+}
+
+.designedfor{
+    font-size: 30px;
+    color: #66fcf1;
+    /* text-shadow: 6px 7px 10px black; */
+}
+
+.designtexts2 p{
+    color: black;
+    font-weight: 600;
+}
+
+/*FOOTER SECTION*/
+
+#footermain{
+    width: 100%;
+    height: 80px;
+}
+#footersubmain{
+    height: 100%;
+    background-color: #17a2b8;
+    border-top: 2px solid #c5c6c7;
+}
+#footerlinks a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 0.4s ease-in-out;
+
+}
+#footerin{
+    height: 100%;
+    width: 80%;
+}
+#footerlinks a:hover{
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+/* copy right css */
+#copyrightmain{
+    height: 40px;
+    width: 100%;
+}
+#copyrightsubmain{
+    height: 100%;
+    background-color: #0d6674;
+}
+#copyrighttext p{
+    color: white;
+    /* font-weight: 600; */
+}
+
+/*KEYFRAMES*/
+
+@keyframes anime {
+    0% {
+        transform: translateY(-3%);
+    }
+    100% {
+        transform: translateY(3%);
+    }
+}
+
+/*MOBILE DEVICE*/
+
+@media (max-width: 768px) {
+
+    /* Top Navbar */
+
+    #topnavbar {
+        display: none;
+    }
+
+    /*Main Navbar*/
+
+    #navitems {
+        margin-left: 0;
+        justify-content: center;
+    }
+
+    #navlogo {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    /*Hero Section*/
+
+    #hero {
+        height: 550px;
+    }
+    #herotextleft{
+        color: white;
+        margin-left: 0px;
+    }
+    #herotextleft1  {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    #herotextleft2 {
+        font-size: 14px;
+    }
+
+    #herotextright{
+        text-align: center;
+        width: 120px;
+    }
+    #herotextright1{
+        letter-spacing: 5px;
+        margin-top: 100px;
+        margin-left: -15px;
+        display: flex;
+    }
+    #herotextright2{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #playstore, #appstore{
+        border: 2px solid #03ddff;
+        margin-right: 20px;
+        margin-bottom: 10px; /* Space between the boxes */
+        transition: all 0.2s ease-in-out;
+        font-size: 20px;
+    }
+    #playstore i, #appstore i{
+        font-size: 20px;
+        padding-left: 10px;
+    }
+    #playstore p, #appstore p{
+        padding-right: 10px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    /*Services Section*/
+
+    #service1{
+        width: 300px;
+        height: 150px;
+    }
+    #service2{
+        background-image: url('oursevices1.jpg');
+        width: 300px;
+        height: 300px;
+    }
+    #service3{
+        background-image: url('oursevices2.jpg');
+        width: 300px;
+        height: 300px;
+    }
+    #service4{
+        background-image: url('ourservices3.jpg');
+        width: 300px;
+        height: 300px;
+    }
+    #service5{
+        background-image: url('oursevices4.jpg');
+        width: 300px;
+        height: 300px;
+    }
+    #service6{
+        background-image: url('ourservices5.jpg');
+        width: 300px;
+        height: 300px;
+    }
+
+    /*Trainers Section*/
+
+    #trainersubmain{
+        height: 750px;
+        display: flex;
+        flex-direction: column;
+    }
+    #trainer1 img, #trainer2 img{
+        height: 150px;
+    }
+    #trainer1, #trainer2{
+        height: 200px;
+        width: 500px;
+        text-align: center;
+    }
+    .trainertext{
+        display: flex;
+        flex-direction: column;
+    }
+    #trainer1 img, #trainer2 img{
+        border: 1px solid #66fcf1;
+        transition: all 0.2s ease-in-out;
+    }
+    /*About Us Section*/
+
+    #aboutusmain {
+        height: 300px;
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+    #aboutussubmain{
+        display: flex;
+        flex-direction: column;
+        margin-top: -30px;
+    }
+    #aboutus1 {
+        width: fit-content;
+        text-align: center;
+    }
+    .aboutus {
+        color: black;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .fitnessfreek {
+        color: black;
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: 10px;
+        margin-bottom: 40px;
+    }
+    .aboutustext {
+        font-size: 18px;
+    }
+    #aboutus2 img {
+        display: flex;
+        margin-left: 20px;
+        height: 280px;
+    }
+
+    /*DESIGN SECTION*/
+
+    #designmain{
+        height: 850px;
+        margin-top: 300px;
+    }
+    #designsubmain{
+        height: 850px;
+    }
+    #designsubmain img{
+        left: 45%;
+    }
+    .designtexts2{
+        margin-top: 400px;
+    }
+
+    /*FOOTER SECTION*/
+
+    #footerin{
+        height: 100%;
+        width: 150%;
+        text-align: center;
+        /*font-size: 12px;*/
+    }
+
+    /* copy right css */
+    #copyrightmain{
+        height: 50px;
+    }
+    #copyrightsubmain{
+        height: 100%;
+    }
+    #copyrighttext p{
+        font-size: 10px;
+        margin-bottom: 0px;
+    }
+}
