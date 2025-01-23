@@ -1,4 +1,4 @@
-First go to http://localhost/phpmyadmin
+ First go to http://localhost/phpmyadmin
 
 Then create a new database named "user_db"
 
