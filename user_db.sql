@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2024 at 07:00 PM
+-- Generation Time: Feb 09, 2025 at 06:19 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -53,10 +53,7 @@ CREATE TABLE `user_form` (
 --
 
 INSERT INTO `user_form` (`id`, `name`, `email`, `password`, `user_type`) VALUES
-(1, 'Purnendu Dutta', 'ardent2024@gmail.com', '332bbf8321318bcc1087a96f7ac59e1e', 'user'),
-(2, 'Purnendu Dutta', 'purnendudutta521@gmail.com', 'a69c3173c65abf28f4c30a540bb2dab6', 'user'),
-(3, 'Purnendu Dutta', 'abash123@gmail.com', '202cb962ac59075b964b07152d234b70', 'user'),
-(4, 'Purnendu Dutta', 'purnendu18@gmail.com', '6f4922f45568161a8cdf4ad2299f6d23', 'user');
+(1, 'Purnendu Dutta', 'purnendudutta521@gmail.com', '967772a1818ec65a298e2041560fd089', 'user');
 
 --
 -- Indexes for dumped tables
