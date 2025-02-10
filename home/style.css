@@ -262,7 +262,7 @@
 }
 #trainersubmain{
     height: 400px;
-    width: 100%;
+    width: 110%;
     z-index: 1;
 }
 #trainer1 img, #trainer2 img{
@@ -680,22 +680,8 @@
 === Trainers Section ====
 =========================*/
 
-#trainersubmain{
-    flex-direction: row;
-}
-#trainer1, #trainer2{
-    height: 200px;
-    width: 500px;
-    text-align: center;
-}
-.trainertext{
-    display: flex;
-    flex-direction: column;
-}
 #trainer1 img, #trainer2 img{
-    height: 150px;
-    border: 1px solid #66fcf1;
-    transition: all 0.2s ease-in-out;
+    height: 250px;
 }
 
 /*=======================
@@ -708,6 +694,5 @@
 #aboutusmain {
     height: 350px;
 }
-
 
 }

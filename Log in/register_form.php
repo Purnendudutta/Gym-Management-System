@@ -48,27 +48,7 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
-    <!-- topbar start -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12" id="topnavbar">
-                <div class="row d-flex justify-content-evenly align-items-center" id="topnavitems">
-                    <div class="col-3" id="topnavitems1">
-                        <p> +91 8172032283 | fitnessfreek@gmail.com</p>
-                    </div>
-                    <div class="col-3" id="topnavitems2">
-                        Welcome to Fiteness Freek India
-                    </div>
-                    <div class="col-3" id="topnavitems3">
-                    <a href="https://www.facebook.com/purnendu.dutta.9275"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/purnendudutta07/"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://x.com/purnendu521"><i class="fa-brands fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/purnendu-dutta-723b58245/"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- nav bar start -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
         <div class="container-fluid" background="black">

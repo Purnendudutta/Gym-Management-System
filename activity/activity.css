@@ -9,35 +9,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/*TOP NAVBAR*/
-
-#topnavbar {
-    background-color: #66fcf1;
-    width: 150%;
-    padding-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-#topnavitems {
-    font-size: 15px;
-    width: 100%;
-    justify-content: space-between;
-    list-style: none;
-}
-
-#topnavitems1 {
-    margin-top: 15px;
-    justify-content: space-between;
-}
-#topnavitems2 {
-    margin-top: 0px;
-}
-#topnavitems3 {
-    margin-right: -150px;
-    word-spacing: 10px;
-}
-
 /*MAIN NAVBAR*/
 
 #navbar{
@@ -101,7 +72,6 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh; /* Full viewport height */  
 }
 .container h2{
     color: #66fcf1;
@@ -141,6 +111,10 @@ body{
     }
     /*=========== CARDS ===========*/
 
+    .activity {
+        justify-content: center;
+        justify-items: center;
+    }
     .card {
         width: 90%; /* Make the card take up 90% of the screen width */
         padding: 1px; /* Reduce padding for smaller screens */
@@ -151,5 +125,15 @@ body{
         justify-content: center; /* Centers horizontally */
         align-items: center; /* Centers vertically */
         margin-bottom: 20px; /* Add a margin to the bottom of each card */
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .cards {
+        margin-left: 1px;
+        margin-right: 1px;
+        width: 70%;
+        height: 50%;
+        padding: 1px;
     }
 }
