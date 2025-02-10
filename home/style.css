@@ -203,7 +203,7 @@
 }
 .service:not(#service1):after{
     content: "";
-    background-color: rgb(30, 30, 30);
+    background-color: rgb(0, 0, 0);
     opacity: 0.5;
     position: absolute;
     top: 0;
@@ -213,7 +213,7 @@
 }
 #allservicetext1{
     font-weight: 600;
-    color: #00ffee;
+    color: #54fff4;
     z-index: 1;
     text-align: center;
 }
@@ -232,7 +232,9 @@
     opacity: 10;
 }
 
-/*TRAINERS SECTION*/
+/*=======================
+=== Trainers Section ====
+=========================*/
 
 #trainersmain{
     background-image: url('trainersbg.jpg');
@@ -294,7 +296,9 @@
     color: white;
 }
 
-/*ABOUT US SECTION*/
+/*=======================
+=== About Us Section ====
+=========================*/
 
 #aboutusmain {
     width: 100%;
@@ -550,15 +554,14 @@
         height: 300px;
     }
 
-    /*Trainers Section*/
+/*=======================
+=== Trainers Section ====
+=========================*/
 
     #trainersubmain{
         height: 750px;
         display: flex;
         flex-direction: column;
-    }
-    #trainer1 img, #trainer2 img{
-        height: 150px;
     }
     #trainer1, #trainer2{
         height: 200px;
@@ -570,11 +573,13 @@
         flex-direction: column;
     }
     #trainer1 img, #trainer2 img{
+        height: 150px;
         border: 1px solid #66fcf1;
         transition: all 0.2s ease-in-out;
     }
-    /*About Us Section*/
-
+/*=======================
+=== About Us Section ====
+=========================*/
     #aboutusmain {
         height: 300px;
         margin-top: 60px;
@@ -603,6 +608,10 @@
     }
     .aboutustext {
         font-size: 18px;
+    }
+    #aboutus2 {
+        width: 100%;
+        justify-content: center;
     }
     #aboutus2 img {
         display: flex;
@@ -648,7 +657,7 @@
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 1366px) {
     #navlogo {
         margin-left: 15px;
         margin-top: 10px;
@@ -666,5 +675,39 @@
     #herotextright2{
         flex-direction: row;
     }
+
+/*=======================
+=== Trainers Section ====
+=========================*/
+
+#trainersubmain{
+    flex-direction: row;
+}
+#trainer1, #trainer2{
+    height: 200px;
+    width: 500px;
+    text-align: center;
+}
+.trainertext{
+    display: flex;
+    flex-direction: column;
+}
+#trainer1 img, #trainer2 img{
+    height: 150px;
+    border: 1px solid #66fcf1;
+    transition: all 0.2s ease-in-out;
+}
+
+/*=======================
+=== About Us Section ====
+=========================*/
+
+#aboutus2 img {
+    height: 29vh;
+}
+#aboutusmain {
+    height: 350px;
+}
+
 
 }
