@@ -71,6 +71,8 @@
     font-weight: 700;
     letter-spacing: 5px;
     color: white !important;
+    margin-left: 15px;
+    margin-right: 0px;
 }
 
 #navlogo span{
@@ -463,8 +465,7 @@
     }
 
     #navlogo {
-        font-size: 20px;
-        text-align: center;
+        margin-left: 10px;
     }
 
     /*Hero Section*/
@@ -648,5 +649,22 @@
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    #navlogo {
+        margin-left: 15px;
+        margin-top: 10px;
+    }
+    #herotextleft {
+        margin-left: 2%;
+        margin-top: 10%;
+    }
+    #herotextright{
+        width: 27%;
+    }
+    #herotextright1{
+       margin-top: 0px;
+    }
+    #herotextright2{
+        flex-direction: row;
+    }
 
 }
