@@ -287,7 +287,15 @@
         width: 180%;
     }
     #dashboard_container {
-        width: 9%;
+        width: 1%;
+        margin-left: -40px;
+    }
+    #body_container {
+        margin-left: -1%;
+        margin-top: 1%;
+    }
+    .searchBar {
+        display: none;
     }
 }
 
