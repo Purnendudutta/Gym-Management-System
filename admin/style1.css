@@ -338,10 +338,23 @@
 /*=========== Tablets ============*/
 
 @media (min-width: 768px) and (max-width: 1366px) {
-    #dashboard_container{
-        margin-right: 3%;
+    #dashboard_container {
+        margin-left: -4%;
     }
-    .descBox1{
-        width: 70%;
+    #body_container {
+        margin-left: 6%;
+        margin-top: 0%;
+        width: 81%;
     }
+    #navbar_container {
+        width: 95%;
+    }
+    #main_body {
+        height: 92%;
+        width: 97%;
+    }
+    .descBox1 {
+        width: 100%;
+    }
+
 }

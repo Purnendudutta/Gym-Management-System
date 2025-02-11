@@ -8,5 +8,9 @@ Run the index.php from "gymclone/home" in the phpmyadmin interface:
 
 http://localhost/gymclone/home/
 
-`ADMIN.PHP IS NOT PROPERLY SUITABLE FOR MOBILE DEVICES`
-`IN SOME PAGES NAVBAR TOGGLER IS NOT WORKING PROPERLY.` 
+
+`IN THIS PAGES NAVBAR TOGGLER IS NOT WORKING`
+- Login
+- Register
+- Activity
+
