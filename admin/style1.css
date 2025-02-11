@@ -65,16 +65,16 @@
 
 #body_container{
     margin-top: 10px;
-    height: 100%;
-    width: 80%;
+    height: 99%;
+    width: 84%;
     padding: 0;
     background-color:  #66fcf1;
     
 }
 #dashboard_container{
     margin-top: 50px;
-    height: 100%;
-    width: 20%;
+    height: 94%;
+    width: 16%;
     background-color: #66fcf1;
     display: flex;
     flex-direction: column;
@@ -83,6 +83,7 @@
 }
 .dashboard_heading{
     width: 200px;
+    margin-top: 1%;
     font-weight: 600;
     font-size: 25px;
     color: black;
@@ -92,8 +93,9 @@
 
 }
 #navbar_container{
-    height: 8%;
-    width: 100%;
+    height: 6%;
+    width: 90%;
+    margin-left: 2%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -166,13 +168,15 @@
 }
 #main_body{
     height: 92%;
-    width: 100%;
+    width: 97%;
+    margin-right: 3%;
     background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
     padding: 0;
+    border-radius: 15px;
 }
 #card_container{
     height: 200px;
@@ -225,12 +229,12 @@
 .numberText{
     font-size: 25px;
     font-weight: 600;
-    color: black;
+    color: rgb(0, 0, 0);
 }
 .sloganText{
     font-size: 15px;
     font-weight: 600;
-    color: #acabab;
+    color: #000000;
 }
 .box i{
     font-size: 35px;
@@ -268,21 +272,33 @@
 
 @media (max-width: 768px) {
 
-    /* Top Navbar */
-
-    #topnavbar {
-        display: none;
+    #navbar {
+        width: 180%;
     }
-
-    /*Main Navbar*/
-
     #navitems {
         margin-left: 0;
         justify-content: center;
     }
-
     #navlogo {
         font-size: 20px;
         text-align: center;
+    }
+    #main-container {
+        width: 180%;
+    }
+    #dashboard_container {
+        width: 9%;
+    }
+}
+
+
+/*=========== Tablets ============*/
+
+@media (min-width: 768px) and (max-width: 1366px) {
+    #dashboard_container{
+        margin-right: 3%;
+    }
+    .descBox1{
+        width: 70%;
     }
 }
