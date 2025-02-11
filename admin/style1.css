@@ -176,7 +176,7 @@
     justify-content: space-evenly;
     align-items: center;
     padding: 0;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 #card_container{
     height: 200px;
@@ -286,6 +286,9 @@
     #navbar_container {
         width: 106%;
     }
+    .searchBar {
+        display: none;
+    }
     #main-container {
         width: 99%;
     }
@@ -315,12 +318,19 @@
     }
     #card_container {
         height: 125px;
-        width: 0%;
+        width: 106%;
         margin-left: -3%;
+        margin-top: -3%;
         padding: 4%;
     }
-    .searchBar {
-        display: none;
+    #desc_container {
+        padding: 2%;
+    }
+    .descBox1 {
+        width: 100%;
+    }
+    .projectsTable {
+        word-break: break-all;
     }
 }
 
