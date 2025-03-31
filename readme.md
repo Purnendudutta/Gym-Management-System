@@ -25,7 +25,7 @@ HTML5, CSS3, JavaScript, PHP, SQL. It is a fully responsive website that works w
 
 </details><br/>
 
-[![Technologies Used](https://skillicons.dev/icons?i=ts,vite,react,threejs,tailwind,vercel)](https://skillicons.dev)
+[![Technologies Used](https://skillicons.dev/icons?i=js,html,css,wasm)](https://skillicons.dev)
 
 ## 🧰 Get Started
 
