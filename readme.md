@@ -13,8 +13,9 @@ Run the index.php from "gymclone/home" in the phpmyadmin interface:
 OR Copy This Below Link and Paste the URL in any Browser:
 http://localhost/Gym-Management-System/home/
 
-
+<!--
 `IN THIS PAGES NAVBAR TOGGLER IS NOT WORKING`
 - login_form.php
 - register_form.php
 - activity.php
+-->
