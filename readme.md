@@ -48,7 +48,8 @@ Start Apache and MySQL
 
 **Step 2:**
 
-Then go to http://localhost/phpmyadmin
+Then go to 
+`http://localhost/phpmyadmin`
 
 **Step 3:**
 
@@ -61,7 +62,7 @@ Then import the "user_db.sql" file into the database.
 **Step 5:**
 
 Run the index.php from "gymclone/home" in the phpmyadmin interface OR Copy This Below Link and Paste the URL in any Browser:
-http://localhost/Gym-Management-System/home/
+`http://localhost/Gym-Management-System/home/`
 
 ## 🔧 Contributing
 
