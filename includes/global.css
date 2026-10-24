@@ -1,0 +1,327 @@
+/* ============================================================
+   FITNESS FREEK — Comprehensive Deep Red Design System
+   Professional Gym Experience
+   Author: Purnendu Dutta
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    /* Pure Athletic Deep Red Tokens */
+    --brand-primary: #e50914;       /* Aggressive Gym Crimson */
+    --brand-secondary: #ff2a3b;     /* High-energy scarlet */
+    --brand-dark-red: #8b0000;      /* Deep blood burgundy */
+    --brand-accent: #ff4d5a;
+    --brand-glow: rgba(229, 9, 20, 0.45);
+
+    /* Dark Mode (Default) */
+    --bg-primary: #0a0405;          /* Jet black with deep wine undertone */
+    --bg-secondary: #120709;
+    --bg-card: #18080b;
+    --bg-card-hover: #220a0e;
+    --bg-nav: rgba(10, 4, 5, 0.95);
+    --bg-top-bar: #7a0006;
+    --text-primary: #ffffff;
+    --text-secondary: #cfc2c4;
+    --text-muted: #827275;
+    --border-color: rgba(229, 9, 20, 0.28);
+    --shadow-color: rgba(229, 9, 20, 0.22);
+    --form-input-bg: #140608;
+    --form-input-border: #331015;
+    --footer-bg: #060203;
+    --footer-text: #968587;
+    --nav-link-color: #f2e9ea;
+}
+
+/* Light Mode */
+[data-theme="light"] {
+    --bg-primary: #faf2f3;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #fff0f1;
+    --bg-nav: rgba(255, 255, 255, 0.96);
+    --bg-top-bar: #99000a;
+    --text-primary: #1a080a;
+    --text-secondary: #4a3437;
+    --text-muted: #756063;
+    --border-color: rgba(200, 16, 28, 0.22);
+    --shadow-color: rgba(200, 16, 28, 0.16);
+    --form-input-bg: #f8edee;
+    --form-input-border: #e2c6c8;
+    --footer-bg: #140507;
+    --footer-text: #d4c2c4;
+    --nav-link-color: #2b0f12;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--brand-primary); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-secondary); }
+
+/* ===================== PROFESSIONAL GYM HEADER ===================== */
+
+#proNavbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--bg-nav);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.nav-brand-logo {
+    font-family: 'Anton', sans-serif;
+    font-size: 26px;
+    letter-spacing: 3px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-brand-logo .brand-badge {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    color: #fff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 4px 15px var(--brand-glow);
+}
+
+.nav-brand-logo span {
+    color: var(--brand-primary);
+    text-shadow: 0 0 16px var(--brand-glow);
+}
+
+.nav-links-list .nav-link {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--text-primary) !important;
+    padding: 8px 16px !important;
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+.nav-links-list .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background: var(--brand-primary);
+    transform: scaleX(0);
+    transition: transform 0.25s ease;
+}
+
+.nav-links-list .nav-link:hover::after,
+.nav-links-list .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+.nav-links-list .nav-link:hover,
+.nav-links-list .nav-link.active {
+    color: var(--brand-secondary) !important;
+}
+
+/* ===================== SLEEK THEME SWITCHER ===================== */
+
+.theme-switch-pill {
+    position: relative;
+    width: 58px;
+    height: 28px;
+    background: var(--bg-card);
+    border: 1.5px solid var(--border-color);
+    border-radius: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.theme-switch-pill:hover {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 10px var(--brand-glow);
+}
+
+.theme-thumb {
+    position: absolute;
+    top: 2px;
+    left: 3px;
+    width: 21px;
+    height: 21px;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    border-radius: 50%;
+    transition: transform 0.35s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    box-shadow: 0 2px 8px var(--brand-glow);
+}
+
+[data-theme="light"] .theme-thumb {
+    transform: translateX(29px);
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+}
+
+/* ===================== FLOATING CONTROLS (BOTTOM RIGHT) ===================== */
+
+#backToTop {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    z-index: 999;
+    box-shadow: 0 8px 25px var(--brand-glow);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.7);
+    transition: all 0.3s ease;
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+#backToTop:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 12px 30px rgba(229, 9, 20, 0.6);
+}
+
+/* ===================== BUTTONS & BADGES ===================== */
+
+.btn-brand-red {
+    background: linear-gradient(135deg, var(--brand-primary), var(--brand-secondary));
+    color: #ffffff !important;
+    font-weight: 700;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 13.5px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 20px var(--brand-glow);
+}
+
+.btn-brand-red:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(229, 9, 20, 0.55);
+}
+
+.btn-outline-red {
+    background: transparent;
+    border: 2px solid var(--brand-primary);
+    color: var(--brand-primary) !important;
+    font-weight: 600;
+    padding: 10px 26px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-outline-red:hover {
+    background: var(--brand-primary);
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--brand-glow);
+}
+
+.section-badge {
+    display: inline-block;
+    background: rgba(229, 9, 20, 0.12);
+    color: var(--brand-secondary);
+    border: 1px solid rgba(229, 9, 20, 0.35);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+
+.section-title span {
+    color: var(--brand-primary);
+}
+
+.form-input-red {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--form-input-bg);
+    border: 1.5px solid var(--form-input-border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.25s;
+}
+
+.form-input-red:focus {
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.2);
+}
+
+@media (max-width: 991px) {
+    .creator-credit-bottom { right: 16px; bottom: 80px; }
+}

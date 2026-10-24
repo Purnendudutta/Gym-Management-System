@@ -1,92 +1,139 @@
 <?php
 include "..\Log in\config.php";
-$id = $_GET["id"];
+session_start();
 
-if (isset($_POST["submit"])) {
-  $id = $_POST['id'];
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-
-  $sql = "UPDATE `user_form` SET `id`='$id',`name`='$name',`email`='$email' WHERE id = $id";
-
-  $result = mysqli_query($conn, $sql);
-
-  if ($result) {
-    header("Location: ..\admin\admin.php?msg=Data updated successfully");
-  } else {
-    echo "Failed: " . mysqli_error($conn);
-  }
+// Validate ID
+$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+if (!$id && isset($_POST['id'])) {
+    $id = filter_var($_POST['id'], FILTER_VALIDATE_INT);
 }
 
+if (!$id || $id < 1) {
+    header("Location: ..\admin\admin.php");
+    exit;
+}
+
+$success_msg = '';
+$error_msg = '';
+
+if (isset($_POST['submit'])) {
+    $name  = trim($_POST['name']);
+    $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+
+    if (empty($name) || !$email) {
+        $error_msg = 'Please enter a valid name and email address.';
+    } else {
+        $stmt = $conn->prepare("UPDATE user_form SET name=?, email=? WHERE id=?");
+        $stmt->bind_param("ssi", $name, $email, $id);
+        if ($stmt->execute()) {
+            header("Location: ..\admin\admin.php?msg=User+updated+successfully");
+            exit;
+        } else {
+            $error_msg = 'Update failed: ' . $conn->error;
+        }
+        $stmt->close();
+    }
+}
+
+// Fetch user
+$stmt = $conn->prepare("SELECT * FROM user_form WHERE id = ? LIMIT 1");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$stmt->close();
+
+if (!$row) {
+    header("Location: ..\admin\admin.php");
+    exit;
+}
+
+$depth = '..';
 ?>
 
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <title>Edit User Data</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITNESS FREEK | Edit User</title>
+    <link rel="icon" href="..\home\women.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../includes/global.css">
+    <link rel="stylesheet" href="style1.css">
+    <script src="../includes/theme.js"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-light justify-content-center fs-3 mb-5" style="background-color: #00ff5573;">
-  Edit User Data
-  </nav>
+    <?php include '../includes/navbar.php'; ?>
 
-  <div class="container">
-    <div class="text-center mb-4">
-      <h3>Edit User Information</h3>
-      <p class="text-muted">Click update after changing any information</p>
+    <div style="min-height: calc(100vh - 120px); display: flex; align-items: center; justify-content: center; padding: 60px 20px; background: var(--bg-primary);">
+        <div style="width: 100%; max-width: 520px;">
+
+            <div style="text-align: center; margin-bottom: 32px;">
+                <span class="section-badge"><i class="fa-solid fa-pen-to-square"></i> Admin Panel</span>
+                <h2 class="section-title" style="font-size: 32px; margin-top: 12px;">Edit <span>User</span></h2>
+            </div>
+
+            <?php if ($error_msg): ?>
+                <div class="auth-alert auth-alert-error" style="margin-bottom: 16px;">
+                    <i class="fa-solid fa-triangle-exclamation"></i> <?php echo htmlspecialchars($error_msg); ?>
+                </div>
+            <?php endif; ?>
+
+            <div style="background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 16px; padding: 36px 32px;">
+                <form method="POST" action="">
+                    <input type="hidden" name="id" value="<?php echo (int)$row['id']; ?>">
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label style="font-size:13px; font-weight:600; color: var(--text-secondary); display:flex; align-items:center; gap:7px; margin-bottom:6px;">
+                            <i class="fa-solid fa-hashtag" style="color: var(--brand-primary);"></i> User ID
+                        </label>
+                        <input type="text" value="#<?php echo (int)$row['id']; ?>" disabled
+                            style="width:100%; padding:11px 16px; background: var(--form-input-bg); border: 1.5px solid var(--form-input-border); border-radius: 10px; color: var(--text-muted); font-size: 14px; font-family: 'Poppins', sans-serif; outline: none;">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <label style="font-size:13px; font-weight:600; color: var(--text-secondary); display:flex; align-items:center; gap:7px; margin-bottom:6px;">
+                            <i class="fa-solid fa-user" style="color: var(--brand-primary);"></i> Full Name
+                        </label>
+                        <input type="text" name="name" required
+                            value="<?php echo htmlspecialchars($row['name']); ?>"
+                            style="width:100%; padding:11px 16px; background: var(--form-input-bg); border: 1.5px solid var(--form-input-border); border-radius: 10px; color: var(--text-primary); font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: border-color 0.25s;"
+                            onfocus="this.style.borderColor='#00d4c8'" onblur="this.style.borderColor='var(--form-input-border)'">
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 28px;">
+                        <label style="font-size:13px; font-weight:600; color: var(--text-secondary); display:flex; align-items:center; gap:7px; margin-bottom:6px;">
+                            <i class="fa-solid fa-envelope" style="color: var(--brand-primary);"></i> Email Address
+                        </label>
+                        <input type="email" name="email" required
+                            value="<?php echo htmlspecialchars($row['email']); ?>"
+                            style="width:100%; padding:11px 16px; background: var(--form-input-bg); border: 1.5px solid var(--form-input-border); border-radius: 10px; color: var(--text-primary); font-size: 14px; font-family: 'Poppins', sans-serif; outline: none; transition: border-color 0.25s;"
+                            onfocus="this.style.borderColor='#00d4c8'" onblur="this.style.borderColor='var(--form-input-border)'">
+                    </div>
+
+                    <div style="display: flex; gap: 12px;">
+                        <button type="submit" name="submit" class="btn-brand" style="flex:1; justify-content:center;">
+                            <i class="fa-solid fa-floppy-disk"></i> Update User
+                        </button>
+                        <a href="..\admin\admin.php" class="btn-outline-brand" style="flex:1; justify-content:center;">
+                            <i class="fa-solid fa-arrow-left"></i> Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+        </div>
     </div>
 
-    <?php
-    $sql = "SELECT * FROM `user_form` WHERE id = $id LIMIT 1";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-    ?>
+    <?php include '../includes/footer.php'; ?>
 
-    <div class="container d-flex justify-content-center">
-      <form action="" method="post" style="width:50vw; min-width:300px;">
-        <div class="row mb-3">
-          <div class="col">
-            <label class="form-label">id:</label>
-            <input type="text" class="form-control" name="id" value="<?php echo $row['id'] ?>">
-          </div>
-
-          <div class="col">
-            <label class="form-label">Name:</label>
-            <input type="text" class="form-control" name="name" value="<?php echo $row['name'] ?>">
-          </div>
-        </div>
-
-        <div class="mb-3">
-          <label class="form-label">Email:</label>
-          <input type="email" class="form-control" name="email" value="<?php echo $row['email'] ?>">
-        </div>
-
-        <div>
-          <button type="submit" class="btn btn-success" name="submit">Update</button>
-          <a href="..\admin\admin.php" class="btn btn-danger">Cancel</a>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Bootstrap -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
 </body>
-
 </html>
