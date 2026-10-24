@@ -1,12 +1,8 @@
--- phpMyAdmin SQL Dump — FITNESS FREEK (Deep Red Edition)
--- Database: user_db
+-- Database Table Schema — FITNESS FREEK (Deep Red Edition)
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-CREATE DATABASE IF NOT EXISTS `user_db` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `user_db`;
 
 -- Table structure for table `user_form`
 CREATE TABLE IF NOT EXISTS `user_form` (
