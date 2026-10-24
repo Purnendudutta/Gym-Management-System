@@ -1,14 +1,18 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
   "functions": {
-    "api/index.php": {
-      "runtime": "vercel-php@0.7.1"
+    "api/*.php": {
+      "runtime": "vercel-php@0.6.1"
     }
   },
-  "rewrites": [
+  "routes": [
     {
-      "source": "/((?!api/).*)",
-      "destination": "/api/index.php"
+      "src": "/(assets/.*|home/.*|includes/.*|style\\.css|script\\.js|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.svg|.*\\.webp|.*\\.ico)",
+      "dest": "/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
     }
   ]
 }

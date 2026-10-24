@@ -1,28 +1,28 @@
 <?php
-// Vercel Serverless Router for FITNESS FREEK
+// Vercel Serverless Entry Point
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 $uri = urldecode(parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH));
 $root = dirname(__DIR__);
 
-// Route root to index.php
+// Route homepage requests
 if ($uri === '/' || $uri === '' || $uri === '/index.php') {
     chdir($root);
     require $root . '/index.php';
     exit;
 }
 
-// Check if requested file exists within the project
+// Route file requests
 $target = $root . '/' . ltrim($uri, '/');
-$realTarget = realpath($target);
-
-if ($realTarget && strpos($realTarget, $root) === 0 && file_exists($realTarget) && !is_dir($realTarget)) {
-    $ext = strtolower(pathinfo($realTarget, PATHINFO_EXTENSION));
+if (file_exists($target) && !is_dir($target)) {
+    $ext = strtolower(pathinfo($target, PATHINFO_EXTENSION));
     if ($ext === 'php') {
-        chdir(dirname($realTarget));
-        require $realTarget;
+        chdir(dirname($target));
+        require $target;
         exit;
     }
-
-    // Static asset fallback with correct MIME type
+    
     $mimes = [
         'css'  => 'text/css; charset=UTF-8',
         'js'   => 'application/javascript; charset=UTF-8',
@@ -37,7 +37,7 @@ if ($realTarget && strpos($realTarget, $root) === 0 && file_exists($realTarget) 
     if (isset($mimes[$ext])) {
         header('Content-Type: ' . $mimes[$ext]);
     }
-    readfile($realTarget);
+    readfile($target);
     exit;
 }
 
