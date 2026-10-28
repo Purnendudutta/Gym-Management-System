@@ -7,7 +7,7 @@
   },
   "routes": [
     {
-      "src": "/(assets/.*|home/.*|includes/.*|style\\.css|script\\.js|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.svg|.*\\.webp|.*\\.ico)",
+      "src": "/(.*\\.(?:css|js|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|ttf|eot))",
       "dest": "/$1"
     },
     {
