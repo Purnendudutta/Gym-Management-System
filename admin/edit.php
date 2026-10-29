@@ -1,5 +1,5 @@
 <?php
-include "..\Log in\config.php";
+include "../Log in/config.php";
 session_start();
 
 // Validate ID

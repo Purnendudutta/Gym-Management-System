@@ -12,10 +12,32 @@ if (!$conn) {
     die("Database initialization error");
 }
 
-// Cloud database SSL configuration (Aiven / TiDB)
-if ($db_host !== 'localhost' && $db_host !== '127.0.0.1' && file_exists($ca_file)) {
-    mysqli_ssl_set($conn, NULL, NULL, $ca_file, NULL, NULL);
-    @mysqli_options($conn, MYSQLI_OPT_SSL_VERIFY_SERVER_CERT, true);
+// Cloud database SSL configuration (TiDB / Aiven / Remote MySQL)
+if ($db_host !== 'localhost' && $db_host !== '127.0.0.1') {
+    $is_tidb = (strpos($db_host, 'tidbcloud.com') !== false);
+    $cert = null;
+    
+    if ($is_tidb) {
+        $system_cas = [
+            '/etc/pki/tls/certs/ca-bundle.crt',  // Amazon Linux / CentOS (Vercel runtime)
+            '/etc/ssl/certs/ca-certificates.crt', // Debian / Ubuntu
+            '/etc/ssl/cert.pem'                   // Alpine / macOS
+        ];
+        foreach ($system_cas as $path) {
+            if (file_exists($path)) {
+                $cert = $path;
+                break;
+            }
+        }
+    } elseif (file_exists($ca_file)) {
+        $cert = $ca_file;
+    }
+
+    if ($cert) {
+        mysqli_ssl_set($conn, NULL, NULL, $cert, NULL, NULL);
+        @mysqli_options($conn, MYSQLI_OPT_SSL_VERIFY_SERVER_CERT, true);
+    }
+    
     $connected = @mysqli_real_connect(
         $conn,
         $db_host,

@@ -1,5 +1,5 @@
 <?php
-require_once'..\Log in\config.php';
+require_once '../Log in/config.php';
 function display_data()
 {
     global $conn;

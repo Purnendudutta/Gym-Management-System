@@ -1,5 +1,5 @@
 <?php
-require_once('..\admin\function.php');
+require_once __DIR__ . '/function.php';
 session_start();
 
 // Strict gate check: Must be authenticated via admin_login.php
